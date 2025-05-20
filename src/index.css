@@ -1,81 +1,94 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  font-family: "lone-pine", sans-serif;
-  font-weight: 400;
+@font-face {
+  font-family: "Snell Roundhand";
+  src: url("./assets/fonts/SnellRoundhand.ttf") format("truetype");
+  font-weight: normal;
   font-style: normal;
-  background-color: #6f256c;
-  color: #f8803c;
-}
-
-h1 {
-  font-size: 150px !important;
-  font-weight: 400 !important;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  cursor: url("../src/assets/Cursor.svg") 2 2, auto;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.divider {
+  width: 100%;
+  height: 2px;
+  background-color: #500e14;
+  margin: 2rem 0; /* espacio arriba y abajo */
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+.text-degular-black {
+  font-family: "degular", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.text-degular-medium {
+  font-family: "degular", sans-serif;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.text-degular-bold {
+  font-family: "degular", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  overflow-y: scroll;
+}
+
+#banner-container {
+  background: linear-gradient(
+    135deg,
+    rgba(90, 42, 152, 1) 43.8%,
+    rgba(23, 72, 159, 1) 100%
+  );
+}
+
+.line {
+  width: 2px;
+  height: 80px;
+  background-color: white;
+  margin: 0 20px;
+}
+
+.grey-line {
+  width: 1px;
+  height: 80px;
+  background-color: #242424;
+  margin: 0 20px;
+}
+
+p {
+  font-size: 16px;
+}
+
+ul {
+  font-size: 20px;
+}
+
+@media (max-width: 1100px) {
+  .line,
+  .grey-line {
+    height: 60px;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+}
+
+/* Para pantallas pequeñas (Tailwind usa sm a partir de 640px) */
+@media (max-width: 640px) {
+  .line,
+  .grey-line {
+    height: 50px; /* Ajusta la altura según sea necesario */
   }
 }
