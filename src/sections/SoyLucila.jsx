@@ -63,11 +63,9 @@ export const SoyLucila = () => {
 
   return (
     <section className="relative w-full overflow-hidden">
-      {/* Canvas de fondo */}
       <div className="absolute inset-0 z-0 bg-[#FFAB95]"></div>
 
-      <div className="max-w-[1600px] mx-auto  relative z-10 flex flex-col items-center justify-center text-[#500E14] text-center">
-        {/* Primera sección */}
+      <div className="max-w-[1600px] mx-auto relative z-10 flex flex-col items-center justify-center text-[#500E14] text-center">
         <motion.section
           className="w-full flex justify-between items-center px-32 pt-36 pb-20"
           initial={{ opacity: 0, y: 150 }}
@@ -123,7 +121,7 @@ export const SoyLucila = () => {
             <img src={currentImg} alt={hovered} className="relative z-10" />
           </div>
         </motion.section>
-        {/* Segunda sección con efecto “flotante” */}
+
         <div className="w-full flex justify-between items-center px-32 pb-24">
           <div className="relative inline-block">
             <motion.img

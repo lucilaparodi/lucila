@@ -5,16 +5,11 @@ import { motion } from "framer-motion";
 import TrabajosBgTop from "../assets/trabajos-bg-top.webp";
 import TrabajosBgBottom from "../assets/trabajos-bg-bottom.webp";
 import { Footer } from "../sections/Footer";
+import { TodosTrabajos } from "../sections/TodosTrabajos";
 
 export const Trabajos = () => {
   return (
-    <motion.section
-      className="relative"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
-    >
+    <div className="relative">
       <Header />
 
       <Banner
@@ -25,8 +20,8 @@ export const Trabajos = () => {
         showButton={false}
         buttonTitle="Conectar"
       />
-
+      <TodosTrabajos />
       <Footer />
-    </motion.section>
+    </div>
   );
 };

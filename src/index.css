@@ -92,3 +92,32 @@ ul {
     height: 50px; /* Ajusta la altura según sea necesario */
   }
 }
+
+/* ============================
+   Override Autofill Styles
+   ============================ */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  /* cubre el fondo amarillo/blanco del navegador */
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+
+  /* fondo transparente real */
+  background-color: transparent !important;
+  background-image: none !important;
+
+  /* solo línea inferior */
+  border: 0 !important;
+  border-bottom: 2px solid rgba(80, 14, 20, 0.3) !important;
+
+  /* color de texto y cursor */
+  -webkit-text-fill-color: #500e14 !important;
+  caret-color: #500e14 !important;
+
+  /* evita parpadeos de color */
+  transition: background-color 5000s ease-in-out 0s;
+}

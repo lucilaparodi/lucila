@@ -19,7 +19,6 @@ export const Home = () => {
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
       <Header />
-
       <Banner
         bottomBg={HomeBgBottom}
         topBg={HomeBgTop}
@@ -29,14 +28,12 @@ export const Home = () => {
         buttonTitle="Conectar"
       />
 
-      {/* FLOR ABSOLUTA SUPERPUESTA ENTRE SECCIONES */}
-      <div className="absolute left-1/2 top-[100vh] -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none">
+      {/* <div className="absolute left-1/2 top-[100vh] -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none">
         <FlorSVG />
       </div>
-
       <SoyLucila />
       <TrabajosSeccion />
-      <Footer />
+      <Footer />  */}
     </motion.section>
   );
 };

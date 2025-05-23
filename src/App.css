@@ -1,0 +1,34 @@
+@layer utilities {
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:focus {
+    @apply bg-transparent border-0 border-b-2 border-[#500E14]/30;
+    box-shadow: 0 0 0px 1000px transparent inset !important;
+    -webkit-text-fill-color: #500e14 !important;
+  }
+}
+
+/* Forzar fondo transparente y borde inferior tras autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill,
+input:-internal-autofill-selected {
+  /* quita fondo amarillo/blanco */
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  /* refuerza transparencia */
+  background-color: transparent !important;
+  background-image: none !important;
+  /* tu línea inferior */
+  border: 0 !important;
+  border-bottom: 2px solid rgba(80, 14, 20, 0.3) !important;
+  /* color de texto */
+  -webkit-text-fill-color: #500e14 !important;
+}

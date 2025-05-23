@@ -1,20 +1,14 @@
 import React from "react";
 import { Banner } from "../sections/Banner";
 import { Header } from "../sections/Header";
-import { motion } from "framer-motion";
 import SobreMiBgTop from "../assets/sobremi-bg-top.webp";
 import SobreMiBgBottom from "../assets/sobremi-bg-bottom.webp";
 import { Footer } from "../sections/Footer";
+import { SobreMiSeccion } from "../sections/SobreMiSeccion";
 
 export const SobreMi = () => {
   return (
-    <motion.section
-      className="relative"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0, ease: "easeOut" }}
-    >
+    <div className="relative">
       <Header />
 
       <Banner
@@ -26,7 +20,8 @@ export const SobreMi = () => {
         buttonTitle="Conectar"
       />
 
+      <SobreMiSeccion />
       <Footer />
-    </motion.section>
+    </div>
   );
 };

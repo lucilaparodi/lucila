@@ -20,7 +20,7 @@ export const Footer = () => {
 
   const items = [
     { to: "/trabajos", label: "Trabajos" },
-    { to: "/*", label: "Sobre mí" },
+    { to: "/sobre-mi", label: "Sobre mí" },
     { to: "/sobre-mi", label: "Currículum" },
     { to: "/contacto", label: "Contacto" },
   ];
@@ -86,7 +86,7 @@ export const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com/lucilaparodi/"
+                href="https://www.instagram.com/lucila.psd/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -183,11 +183,10 @@ export const Footer = () => {
               to={item.to}
               className="relative group text-[#500E14] transition"
             >
-              {/* indicador “>” */}
               <span className="absolute left-0 -translate-x-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out">
                 &gt;
               </span>
-              {/* texto que se desplaza */}
+
               <span className="inline-block transform transition-transform duration-200 group-hover:translate-x-2">
                 {item.label}
               </span>
