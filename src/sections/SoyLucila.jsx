@@ -6,8 +6,8 @@ import DisenoIMG from "../assets/disenoimg.webp";
 import ConectoIMG from "../assets/conectoimg.webp";
 import DesarrolloIMG from "../assets/desarrolloimg.webp";
 import WebIMG from "../assets/WebIMG.webp";
-import AppIMG from "../assets/appimg.webp";
-import MultimediaIMG from "../assets/multimediaimg.webp";
+import AppIMG from "../assets/AppIMG.webp";
+import MultimediaIMG from "../assets/MultimediaIMG.webp";
 import SombraIMG from "../assets/sombra.webp";
 import { FlorNaranjaSVG } from "../components/FlorNaranjaSVG";
 
