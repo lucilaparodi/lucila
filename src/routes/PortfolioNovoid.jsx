@@ -57,7 +57,7 @@ export const PortfolioNovoid = () => {
       <PortfolioImg
         imgSrc={NovoidImg2}
         title="Branding y diseño gráfico"
-        text="Llevamos la identidad visual al mundo físico diseñando tarjetas personales especiales para un evento, con acabados únicos que destacaran la marca. También desarrollé un folleto informativo pensado específicamente para ese evento, cuidando cada detalle para mantener la coherencia estética y reforzar el reconocimiento de Vibrato."
+        text="Llevamos la identidad visual al mundo físico diseñando tarjetas personales especiales para un evento, con acabados únicos que destacaran la marca. También desarrollé un folleto informativo pensado específicamente para ese evento, cuidando cada detalle para mantener la coherencia estética y reforzar el reconocimiento de Novoid."
         invert
       />
 
