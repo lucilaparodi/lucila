@@ -7,7 +7,7 @@ import ChatGPT from "../assets/chatgpt.svg";
 import Firefly from "../assets/firefly.svg";
 import Figma from "../assets/figma.svg";
 import BebasImg from "../assets/bebasImg.webp";
-import BebasImg2 from "../assets/bebasImg2.webp";
+import BebasImg2 from "../assets/BebasImg2.webp";
 import { PortfolioImg } from "../sections/PortfolioImg";
 
 export const PortfolioBebas = () => {
