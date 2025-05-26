@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect, useRef } from "react";
 import {
   BrowserRouter as Router,
@@ -29,40 +28,37 @@ function AnimatedRoutes() {
   const previousLocation = useRef(location);
 
   useEffect(() => {
-    // si cambió la ruta...
     if (location !== previousLocation.current) {
       setShowLoader(true);
-      // espera 1.5s y luego renderiza la nueva ruta
       const timer = setTimeout(() => {
-        setShowLoader(false);
         setDisplayLocation(location);
         previousLocation.current = location;
-      }, 5000);
+        setShowLoader(false);
+      }, 1000); // reduce or adjust delay as needed
       return () => clearTimeout(timer);
     }
   }, [location]);
 
-  // mientras tanto, mostramos el loader
-  if (showLoader) return <Loader />;
-
-  // renderizamos las rutas basadas en displayLocation,
-  // así evitamos que <Routes> cambie inmediatamente
   return (
-    <Routes location={displayLocation} key={displayLocation.pathname}>
-      <Route path="/" element={<Home />} />
-      <Route path="/trabajos" element={<Trabajos />} />
-      <Route path="/sobre-mi" element={<SobreMi />} />
-      <Route path="/contacto" element={<Contacto />} />
-      <Route path="/contenedor" element={<PortfolioContenedor />} />
-      <Route path="/bebas" element={<PortfolioBebas />} />
-      <Route path="/enviamicompra" element={<PortfolioEnviaMiCompra />} />
-      <Route path="/novoid" element={<PortfolioNovoid />} />
-      <Route path="/lucila" element={<PortfolioLucila />} />
-      <Route path="/rem" element={<PortfolioREM />} />
-      <Route path="/vibrato" element={<PortfolioVibrato />} />
-      <Route path="/video" element={<PortfolioVideo />} />
-      <Route path="*" element={<Home />} />
-    </Routes>
+    <>
+      {showLoader && <div className="loader-overlay"><Loader /></div>}
+
+      <Routes location={displayLocation} key={displayLocation.pathname}>
+        <Route path="/" element={<Home />} />
+        <Route path="/trabajos" element={<Trabajos />} />
+        <Route path="/sobre-mi" element={<SobreMi />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="/contenedor" element={<PortfolioContenedor />} />
+        <Route path="/bebas" element={<PortfolioBebas />} />
+        <Route path="/enviamicompra" element={<PortfolioEnviaMiCompra />} />
+        <Route path="/novoid" element={<PortfolioNovoid />} />
+        <Route path="/lucila" element={<PortfolioLucila />} />
+        <Route path="/rem" element={<PortfolioREM />} />
+        <Route path="/vibrato" element={<PortfolioVibrato />} />
+        <Route path="/video" element={<PortfolioVideo />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
+    </>
   );
 }
 
