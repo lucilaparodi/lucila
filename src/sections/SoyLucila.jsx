@@ -5,7 +5,7 @@ import { useSwipeable } from "react-swipeable";
 import DisenoIMG from "../assets/disenoimg.webp";
 import ConectoIMG from "../assets/conectoimg.webp";
 import DesarrolloIMG from "../assets/desarrolloimg.webp";
-import WebIMG from "../assets/webimg.webp";
+import WebIMG from "../assets/WebIMG.webp";
 import AppIMG from "../assets/appimg.webp";
 import MultimediaIMG from "../assets/multimediaimg.webp";
 import SombraIMG from "../assets/sombra.webp";
