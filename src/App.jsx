@@ -37,7 +37,7 @@ function AnimatedRoutes() {
         setShowLoader(false);
         setDisplayLocation(location);
         previousLocation.current = location;
-      }, 500);
+      }, 1000);
       return () => clearTimeout(timer);
     }
   }, [location]);
