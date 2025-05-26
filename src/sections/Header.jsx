@@ -18,7 +18,7 @@ export const Header = () => {
 
   return (
     <header className="w-full absolute top-0 left-0 bg-transparent z-50 border-b-2 border-[#500E14]">
-      <div className="max-w-[1600px] mx-auto w-full py-8 md:py-12 px-6 md:px-32">
+      <div className="max-w-[1600px] mx-auto w-full py-8 md:py-12 px-4 md:px-16">
         {/* === MENU DE ESCRITORIO === */}
         <div className="hidden md:flex items-center justify-center">
           <nav className="w-full flex justify-between text-degular-medium text-xl">
@@ -127,7 +127,7 @@ export const Header = () => {
                       <span className="absolute left-0 -translate-x-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out">
                         &gt;
                       </span>
-                      <span className="inline-block transform transition-transform duration-200 group-hover:translate-x-4 pl-6">
+                      <span className="text-xl inline-block transform transition-transform duration-200 group-hover:translate-x-4 pl-6">
                         {item.label}
                       </span>
                     </div>
@@ -143,7 +143,7 @@ export const Header = () => {
       {isMenuOpen && (
         <div
           onClick={() => setIsMenuOpen(false)}
-          className="md:hidden fixed inset-0 bg-black transition-opacity duration-500 ease-in-out opacity-30 z-40"
+          className="md:hidden fixed inset-0 bg-black transition-opacity duration-500 ease-in-out opacity-20 z-40"
         />
       )}
     </header>

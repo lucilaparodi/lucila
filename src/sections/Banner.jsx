@@ -46,7 +46,7 @@ export const Banner = ({
         pero en móvil lo reducimos a mt-2 con: "mt-2 md:mt-30"
         para acercar más los textos en pantallas pequeñas.
       */}
-      <div className="relative z-20 text-center text-white px-4 mt-2 md:mt-30">
+      <div className="relative z-20 text-center text-white px-4 mt-2 ">
         {/* 
           Quitamos el mb-2 (solo lo aplicamos en escritorio con md:mb-2)
           para pegar más el primer título al segundo en mobile.

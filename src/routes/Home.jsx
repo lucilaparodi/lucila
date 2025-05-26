@@ -28,12 +28,12 @@ export const Home = () => {
         buttonTitle="Conectar"
       />
 
-      {/* <div className="absolute left-1/2 top-[100vh] -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none">
+      <div className="absolute left-1/2 top-[100vh] -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none">
         <FlorSVG />
       </div>
       <SoyLucila />
       <TrabajosSeccion />
-      <Footer />  */}
+      <Footer />
     </motion.section>
   );
 };

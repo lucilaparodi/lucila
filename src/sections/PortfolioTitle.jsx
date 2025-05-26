@@ -24,13 +24,13 @@ export const PortfolioTitle = ({
 }) => {
   return (
     <section className="relative w-full overflow-hidden py-16">
-      <div className="max-w-[1600px] px-32 pt-28 mx-auto text-center">
+      <div className="max-w-[1600px] px-8 md:px-16 pt-28 mx-auto text-center">
         {/* Mockup con sombra */}
         <div className="relative inline-block py-8">
           <motion.img
             src={mockupSrc}
             alt={mockupAlt}
-            className="relative z-10 w-140 mx-auto"
+            className="relative z-10 w-80 md:w-140 mx-auto"
             animate={{ y: [0, -15, 0] }}
             transition={{
               duration: 2,
@@ -42,11 +42,11 @@ export const PortfolioTitle = ({
           <img
             src={sombraGrupo}
             alt="Sombra Grupo"
-            className="absolute inset-x-5 top-[68%] mt-4 w-140 mx-auto opacity-50"
+            className="absolute inset-x-2 md:inset-x-5 top-[68%] mt-4 w-80 md:w-140 mx-auto opacity-50"
           />
         </div>
 
-        {/* Títulos */}
+        {/* Títulos (Ajustamos tamaño en mobile vs. desktop) */}
         <div className="flex items-center justify-center mb-2">
           <svg
             width="67"
@@ -62,24 +62,52 @@ export const PortfolioTitle = ({
           </svg>
           <h1
             style={{ fontFamily: "Snell Roundhand" }}
-            className="text-[200px] text-[#500E14] relative z-10"
+            className="
+              text-[80px]   /* Título grande en mobile */
+              md:text-[200px] /* Título enorme en desktop */
+              text-[#500E14]
+              relative 
+              z-10
+            "
           >
             {titlePrimary}
           </h1>
         </div>
-        <h1 className="text-[200px] -mt-40 text-degular-black text-[#FDAFB4] relative z-0">
+        {/* Segundo título encima (con -mt) */}
+        <h1
+          className="
+            text-[80px] 
+            md:text-[200px] 
+            -mt-12 
+            md:-mt-40 
+            text-degular-black 
+            text-[#FDAFB4] 
+            relative 
+            z-0
+          "
+        >
           {titleSecondary}
         </h1>
 
-        {/* Tres columnas: Aportes, Stack, Créditos */}
-        <div className="mt-20">
-          <div className="grid grid-cols-3 gap-8 text-left">
+        {/* Tres columnas: Aportes, Stack, Créditos 
+            (1 columna en mobile, 3 en desktop) 
+        */}
+        <div className="mt-10 md:mt-20">
+          <div
+            className="
+              grid
+              grid-cols-1
+              md:grid-cols-3
+              gap-8
+              text-left
+            "
+          >
             {/* Aportes */}
             <div>
-              <h3 className="text-7xl font-bold text-degular-bold text-[#500E14]">
+              <h3 className="text-4xl lg:text-7xl font-bold text-degular-bold text-[#500E14]">
                 Aportes
               </h3>
-              <div className="text-xl mt-4 leading-10">
+              <div className="text-lg lg:text-xl mt-4 leading-7 md:leading-10">
                 {aportes.map((item, idx) => (
                   <p key={idx}>&gt; {item}</p>
                 ))}
@@ -87,15 +115,19 @@ export const PortfolioTitle = ({
             </div>
 
             {/* Stack */}
-            <div>
-              <h3 className="text-7xl font-bold text-[#500E14] text-center">
+            <div className="lg:text-center">
+              <h3 className="text-4xl lg:text-7xl font-bold text-[#500E14]">
                 Stack
               </h3>
-              {/* Grid de íconos: 3 columnas, auto-break */}
-              <div className="mt-4 grid grid-cols-3 justify-items-center gap-4 w-1/2 mx-auto">
+              {/* Grid de íconos: 3 columnas en desktop, auto-col en mobile */}
+              <div className="mt-4 grid grid-cols-6 md:grid-cols-3 lg:justify-items-center gap-4 lg:w-[200px] lg:w-1/2 lg:mx-auto">
                 {stackIcons.map((icon, idx) => (
                   <div key={idx} className="relative group">
-                    <img src={icon.src} alt={icon.alt || `Stack icon ${idx}`} />
+                    <img
+                      src={icon.src}
+                      alt={icon.alt || `Stack icon ${idx}`}
+                      className="max-h-14 md:max-h-20"
+                    />
                     <span className="absolute bottom-full mb-2 left-1/2 transform -translate-x-1/2 whitespace-nowrap bg-[#FDAFB4] text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity">
                       {icon.alt || `Stack icon ${idx}`}
                     </span>
@@ -105,11 +137,11 @@ export const PortfolioTitle = ({
             </div>
 
             {/* Créditos */}
-            <div>
-              <h3 className="text-7xl font-bold text-degular-bold text-[#500E14] text-right">
+            <div className="lg:text-right">
+              <h3 className="text-4xl lg:text-7xl font-bold text-degular-bold text-[#500E14]">
                 Créditos
               </h3>
-              <p className="text-md leading-7 mt-4 text-right">{creditText}</p>
+              <p className="text-md lg:text-lg leading-7 mt-4">{creditText}</p>
             </div>
           </div>
         </div>

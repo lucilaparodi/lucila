@@ -40,7 +40,7 @@ export const Contacto = () => {
       );
   };
 
-  // Oculta el toast tras 3s
+  // Oculta el toast tras 10s
   useEffect(() => {
     if (status) {
       const timer = setTimeout(() => setStatus(null), 10000);
@@ -64,8 +64,26 @@ export const Contacto = () => {
         buttonTitle="Conectar"
       />
 
-      <section className="bg-[#FFAB95] py-16 max-w-[1600px] px-32 mx-auto shadow-lg overflow-hidden flex justify-between items-center">
-        <div className="w-1/2 flex flex-col items-center justify-center">
+      <section
+        className="
+          bg-[#FFAB95] 
+          py-16 
+          max-w-[1600px] 
+          px-6
+          sm:px-16 
+          mx-auto 
+          shadow-lg 
+          overflow-hidden 
+          flex 
+          flex-col 
+          lg:flex-row 
+          md:justify-between 
+          md:items-center
+          gap-8
+        "
+      >
+        {/* Columna Izquierda */}
+        <div className="lg:w-1/2 w-full flex flex-col items-center justify-center">
           <motion.div style={{ rotate }}>
             <svg
               width="211"
@@ -80,12 +98,12 @@ export const Contacto = () => {
               />
             </svg>
           </motion.div>
-          <div class="flex flex-col items-center justify-center gap-8 mt-12 w-1/2">
-            <h2 class="text-degular-bold text-5xl text-center text-[#500E14]">
+          <div className="flex flex-col items-center justify-center gap-8 mt-12 w-full px-4 md:px-0 md:w-1/2">
+            <h2 className="text-degular-bold text-3xl md:text-5xl text-center text-[#500E14]">
               Contactate directamente
             </h2>
-            <div class="flex flex-col items-center gap-4">
-              <div class="flex items-center gap-4">
+            <div className="flex flex-col items-center gap-4">
+              <div className="flex items-center gap-4 flex-wrap justify-center">
                 <svg
                   width="31"
                   height="36"
@@ -98,11 +116,11 @@ export const Contacto = () => {
                     fill="#F9643E"
                   ></path>
                 </svg>
-                <span class="text-degular-medium text-[#500E14] text-xl">
+                <span className="text-degular-medium text-[#500E14] text-lg md:text-xl">
                   +598 94 912 776
                 </span>
               </div>
-              <div class="flex items-center gap-4">
+              <div className="flex items-center gap-4 flex-wrap justify-center">
                 <svg
                   width="36"
                   height="36"
@@ -119,21 +137,26 @@ export const Contacto = () => {
                     fill="#F9643E"
                   ></path>
                 </svg>
-                <span class="text-degular-medium text-[#500E14] text-xl">
+                <span className="text-degular-medium text-[#500E14] text-lg md:text-xl break-all text-center whitespace-nowrap">
                   lucila.parodi.c@gmail.com
                 </span>
               </div>
             </div>
-            <div class="mt-4"></div>
+            <div className="mt-4"></div>
           </div>
         </div>
 
-        <div className="bg-[#FFC7B8] bgopacity-50 p-12 rounded-2xl">
-          <h2 className="font-bold text-degular-bold text-7xl text-[#F9643E] mb-8 text-center">
+        {/* Columna Derecha */}
+        <div className="md:w-auto w-full bg-[#FFC7B8] bgopacity-50 p-12 rounded-2xl">
+          <h2 className="font-bold text-degular-bold text-4xl md:text-7xl text-[#F9643E] mb-8 text-center">
             Mandame un mensaje
           </h2>
 
-          <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
+          <form
+            ref={formRef}
+            onSubmit={sendEmail}
+            className="space-y-6 max-w-[500px] mx-auto"
+          >
             <div>
               <label className="block text-degular-medium text-xl text-[#500E14] mb-2">
                 Nombre
@@ -142,7 +165,25 @@ export const Contacto = () => {
                 type="text"
                 name="user_name"
                 placeholder="Tu nombre"
-                className="text-degular-medium text-xl w-full px-0 py-2 bg-transparent border-0 border-b-2 border-[#500E14]/30 placeholder-[#500E14]/50 focus:outline-none focus:border-[#500E14] transition autofill:shadow-[inset_0_0_0px_1000px_rgba(255,255,255,0)] autofill:text-[#500E14] autofill:!bg-transparent"
+                className="
+                  text-degular-medium 
+                  text-base 
+                  md:text-xl 
+                  w-full 
+                  px-0 
+                  py-2 
+                  bg-transparent 
+                  border-0 
+                  border-b-2 
+                  border-[#500E14]/30 
+                  placeholder-[#500E14]/50 
+                  focus:outline-none 
+                  focus:border-[#500E14] 
+                  transition 
+                  autofill:shadow-[inset_0_0_0px_1000px_rgba(255,255,255,0)] 
+                  autofill:text-[#500E14] 
+                  autofill:!bg-transparent
+                "
                 required
               />
             </div>
@@ -155,7 +196,25 @@ export const Contacto = () => {
                 type="email"
                 name="user_email"
                 placeholder="tu@ejemplo.com"
-                className="text-degular-medium text-xl w-full px-0 py-2 bg-transparent border-0 border-b-2 border-[#500E14]/30 placeholder-[#500E14]/50 focus:outline-none focus:border-[#500E14] transition autofill:shadow-[inset_0_0_0px_1000px_rgba(255,255,255,0)] autofill:text-[#500E14] autofill:!bg-transparent"
+                className="
+                  text-degular-medium 
+                  text-base 
+                  md:text-xl 
+                  w-full 
+                  px-0 
+                  py-2 
+                  bg-transparent 
+                  border-0 
+                  border-b-2 
+                  border-[#500E14]/30 
+                  placeholder-[#500E14]/50 
+                  focus:outline-none 
+                  focus:border-[#500E14] 
+                  transition 
+                  autofill:shadow-[inset_0_0_0px_1000px_rgba(255,255,255,0)] 
+                  autofill:text-[#500E14] 
+                  autofill:!bg-transparent
+                "
                 required
               />
             </div>
@@ -168,7 +227,26 @@ export const Contacto = () => {
                 name="message"
                 rows="3"
                 placeholder="Escribe tu mensaje..."
-                className="text-degular-medium text-xl w-full px-0 py-2 bg-transparent border-0 border-b-2 border-[#500E14]/30 placeholder-[#500E14]/50 focus:outline-none focus:border-[#500E14] transition resize-none autofill:shadow-[inset_0_0_0px_1000px_rgba(255,255,255,0)] autofill:text-[#500E14] autofill:!bg-transparent"
+                className="
+                  text-degular-medium 
+                  text-base 
+                  md:text-xl 
+                  w-full 
+                  px-0 
+                  py-2 
+                  bg-transparent 
+                  border-0 
+                  border-b-2 
+                  border-[#500E14]/30 
+                  placeholder-[#500E14]/50 
+                  focus:outline-none 
+                  focus:border-[#500E14] 
+                  transition 
+                  resize-none 
+                  autofill:shadow-[inset_0_0_0px_1000px_rgba(255,255,255,0)] 
+                  autofill:text-[#500E14] 
+                  autofill:!bg-transparent
+                "
                 required
               />
             </div>
@@ -182,7 +260,7 @@ export const Contacto = () => {
 
       {/* Toast */}
       {status && (
-        <div className="fixed bottom-4 text-degular-medium right-4 bg-white opacity-50 text-[#500E14] border border-[#500E14] px-4 py-2 rounded shadow-lg z-50">
+        <div className="fixed bottom-4 right-4 bg-white opacity-50 text-degular-medium text-[#500E14] border border-[#500E14] px-4 py-2 rounded shadow-lg z-50">
           {status}
         </div>
       )}

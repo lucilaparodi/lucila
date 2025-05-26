@@ -4,6 +4,8 @@ import { FlorSVG2 } from "../components/FlorSVG2";
 import { FlorSVG3 } from "../components/FlorSVG3";
 import { useInView } from "framer-motion";
 import SoyLucilaImg from "../assets/soylucila.webp";
+import { useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const experiences = [
   {
@@ -64,24 +66,24 @@ const TimelineItem = ({ start, end, title, company }) => {
   return (
     <div
       ref={ref}
-      className="relative flex gap-6 text-degular-bold text-[#500E14] text-xl flex items-center"
+      className="relative flex gap-6 text-degular-bold text-[#500E14] text-xl items-center"
     >
       {inView ? (
         <FlorSVG3 className="absolute -left-6 top-2 z-10" />
       ) : (
         <FlorSVG2 className="absolute -left-6 top-2 z-10" />
       )}
-      <div className="flex text-start w-36">
-        <p className="leading-6 text-2xl opacity-50">
+      <div className="flex text-start w-24 lg:w-36">
+        <p className=" leading-4 lg:leading-6 md:text-xl lg:text-2xl opacity-50">
           {start} - <br />
           {end}
         </p>
       </div>
       <div className="flex-1 text-start">
-        <p className="text-2xl text-degular-medium leading-8 mt-[-5px]">
+        <p className="md:text-xl lg:text-2xl text-degular-medium leading-5 lg:leading-8 mt-[-5px]">
           {title}
         </p>
-        <p className="text-xl text-degular-medium leading-4 opacity-50">
+        <p className="md:text-lg lg:text-xl text-degular-medium leading-4 opacity-50">
           {company}
         </p>
       </div>
@@ -90,27 +92,44 @@ const TimelineItem = ({ start, end, title, company }) => {
 };
 
 export const SobreMiSeccion = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth" });
+        }, 200);
+      }
+    }
+  }, [location]);
   return (
     <section className="relative w-full overflow-hidden py-16 bg-[#FFAB95]">
-      <div className="max-w-[1600px] px-32 pt-28 mx-auto text-center">
-        {/* Inicio de sección optimizada */}
-        <div className="flex items-center gap-24 justify-center pb-32">
-          <div className="w-1/2 relative inline-block">
-            <RectangleLine2 className="absolute top-0 left-0 -translate-y-4 translate-x-4 z-0" />
+      <div className="max-w-[1600px] px-4 md:px-16 md:pt-28 mx-auto text-center">
+        {/* Contenedor principal de imagen + texto */}
+        {/* Cambiamos a flex-col en mobile, flex-row en desktop */}
+        <div className="flex flex-col xl:flex-row  items-center md:gap-24 md:justify-center pb-20 lg:pb-32">
+          {/* Imagen */}
+          <div className="w-full xl:w-1/2 relative inline-block mb-8 md:mb-0">
             <img
               src={SoyLucilaImg}
               alt="Soy Lucila"
-              className="relative -translate-y-2 translate-x-6 z-10 w-full h-auto"
+              className="relative z-10 w-full h-auto"
             />
           </div>
-          <div className="w-1/2 text-start">
+
+          {/* Texto */}
+          <div className="w-full xl:w-1/2 text-start">
+            {/* Ajustamos el heading en mobile para que no se corte, 
+                pero en desktop sigue igual (text-9xl) */}
             <h2
               style={{ fontFamily: "Snell Roundhand" }}
-              className="text-9xl font-[500] text-[#F9643E] mb-16"
+              className="text-5xl md:text-9xl font-[500] text-[#F9643E] mb-4 md:mb-12 lg:mb-16"
             >
               Soy lucila
             </h2>
-            <p className="text-degular-medium text-lg">
+            <p className="text-degular-medium text-lg md:text-lg">
               ¡Hola! Soy <strong>Lucila</strong>, tengo 26 años y estudio{" "}
               <strong>Licenciatura en Diseño Multimedia</strong> en la
               Universidad ORT Uruguay. Además del diseño, me apasiona la{" "}
@@ -131,11 +150,12 @@ export const SobreMiSeccion = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-center w-full">
-          {/* Experiencia */}
-          <div className="w-full max-w-4xl px-4 mx-auto">
-            <div className="relative py-4">
-              <h3 className="text-7xl font-bold text-degular-bold text-[#500E14] mb-16 leading-16 text-start">
+        {/* Sección Timeline de Experiencia y Educación */}
+        <div id="experiencia" className="flex flex-col items-center w-full">
+          <div className="w-full px-2 mx-auto">
+            {/* Experiencia */}
+            <div className="relative py-4 md:py-4">
+              <h3 className="text-5xl md:text-7xl font-bold text-degular-bold text-[#500E14] mb-8 md:mb-16 leading-16 text-start">
                 Experiencia
               </h3>
               <div className="flex flex-col gap-16">
@@ -151,8 +171,8 @@ export const SobreMiSeccion = () => {
             </div>
 
             {/* Educación */}
-            <div className="relative py-24">
-              <h3 className="text-7xl font-bold text-degular-bold text-[#500E14] mb-16 leading-16 text-start">
+            <div className="relative py-12 md:py-24">
+              <h3 className="text-5xl md:text-7xl font-bold text-degular-bold text-[#500E14] mb-8 md:mb-16 leading-16 text-start">
                 Educación
               </h3>
               <div className="flex flex-col gap-16">
