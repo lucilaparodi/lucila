@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import sombraGrupo from "../assets/sombraGrupo.webp";
+import sombraGrupo from "../assets/SombraGrupo.webp";
 
 /**
  * PortfolioTitle
