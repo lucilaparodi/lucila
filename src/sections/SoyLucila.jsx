@@ -8,7 +8,7 @@ import DesarrolloIMG from "../assets/desarrolloimg.webp";
 import WebIMG from "../assets/WebIMG.webp";
 import AppIMG from "../assets/AppIMG.webp";
 import MultimediaIMG from "../assets/MultimediaIMG.webp";
-import SombraIMG from "../assets/sombra.webp";
+import SombraIMG from "../assets/Sombra.webp";
 import { FlorNaranjaSVG } from "../components/FlorNaranjaSVG";
 
 export const SoyLucila = () => {
