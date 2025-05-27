@@ -1,3 +1,4 @@
+// src/App.js
 import React, { useState, useEffect, useRef } from "react";
 import {
   BrowserRouter as Router,
@@ -28,20 +29,25 @@ function AnimatedRoutes() {
   const previousLocation = useRef(location);
 
   useEffect(() => {
+    // Si la ruta cambió...
     if (location !== previousLocation.current) {
       setShowLoader(true);
+
+      // Espera 1.5s (puedes ajustar este tiempo)
       const timer = setTimeout(() => {
         setDisplayLocation(location);
         previousLocation.current = location;
         setShowLoader(false);
-      }, 1000); // reduce or adjust delay as needed
+      }, 1500);
+
       return () => clearTimeout(timer);
     }
   }, [location]);
 
   return (
     <>
-      {showLoader && <div className="loader-overlay"><Loader /></div>}
+      {/* Muestra el loader como overlay mientras showLoader sea true */}
+      {showLoader && <Loader />}
 
       <Routes location={displayLocation} key={displayLocation.pathname}>
         <Route path="/" element={<Home />} />
@@ -56,6 +62,7 @@ function AnimatedRoutes() {
         <Route path="/rem" element={<PortfolioREM />} />
         <Route path="/vibrato" element={<PortfolioVibrato />} />
         <Route path="/video" element={<PortfolioVideo />} />
+        {/* Ruta por defecto */}
         <Route path="*" element={<Home />} />
       </Routes>
     </>
@@ -67,8 +74,10 @@ function App() {
 
   useEffect(() => {
     const onLoad = () => {
+      // Espera 1s antes de quitar el loader inicial
       setTimeout(() => setLoading(false), 1000);
     };
+
     window.addEventListener("load", onLoad);
     return () => window.removeEventListener("load", onLoad);
   }, []);
