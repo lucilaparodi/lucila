@@ -1,9 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import HomeBgTop from "../assets/sobremi-bg-top.webp"
-import { motion } from "framer-motion"
-import { useLocation } from "react-router-dom"
-import { useEffect } from "react"
 
 export const Footer = () => {
   const footerVariants = {
